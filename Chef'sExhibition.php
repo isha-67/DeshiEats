@@ -32,11 +32,11 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                   <li class="nav-item">
-                    <a class="nav-link navwrite" aria-current="page" href="Index.html">Home</a>
+                    <a class="nav-link navwrite" aria-current="page" href="Index.php">Home</a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link navwrite" href="Menu.html">Menu</a>
+                    <a class="nav-link navwrite" href="Menu.php">Menu</a>
                   </li>
 
                   <li class="nav-item">
@@ -44,11 +44,11 @@
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link navwrite" href="Register.html">Register</a>
+                    <a class="nav-link navwrite" href="Register.php">Register</a>
                   </li>
                   
                   <li class="nav-item">
-                    <a class="nav-link navwrite" href="Login.html">Login</a>
+                    <a class="nav-link navwrite" href="Login.php">Login</a>
                   </li>
 
                   <li class="nav-item">
@@ -217,13 +217,13 @@
               </div>
                 <div class="col-md-4 text-center">
                   <p>
-                    <a class="footwrite" href="Index.html">Home</a>
+                    <a class="footwrite" href="Index.php">Home</a>
                   </p>
                   <p>
-                    <a class="footwrite" href="Menu.html">Menu</a>
+                    <a class="footwrite" href="Menu.php">Menu</a>
                   </p>
                   <p>
-                    <a class="footwrite" href="Register.html">Register</a>
+                    <a class="footwrite" href="Register.php">Register</a>
                   </p>
                   <p>
                     <a class="footwrite" href="#">Order</a>

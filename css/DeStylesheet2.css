@@ -30,6 +30,14 @@ body {
   margin-left: 12px;
 }
 
+.navlogo{
+  margin-bottom: 12px;
+}
+
+.navlogo img{
+  width: 150px ;
+  height: 120px;
+}
 .nav-item:hover {
   background-color: indianred;
   border-radius: 10px;
@@ -86,6 +94,11 @@ th {
   padding-top: 10px;
   font-size: 16px;
   text-align: left;
+}
+
+.footerimg img{
+  width: 280px;
+  height: 300px;
 }
 
 .plusMinusButton {
