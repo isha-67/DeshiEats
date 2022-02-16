@@ -1,3 +1,7 @@
+<?php 
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -35,36 +39,38 @@
                         <div class="formbox">
                             <p class="dont">Sign in with your email address and password.</p>
                         </div>
-                        <div class="form-group formbox mb-3"> 
-                            <label class="mb-3 formlabel">Email address</label>
-                            <input type="text" placeholder="Enter your email address" name="useremail" value="" class="form-control" />
-                        </div>
-                        <div class="form-group formbox mb-3"> 
-                            <label class="mb-3 formlabel">Password</label>
-                            <input type="password" placeholder="Enter your password" name="userpassword" value="" class="form-control" />
-                        </div>
-                        <div class="domatch">
-                            <label>Invalid credentials</label>
-                        </div>
-                        <div class="form-group formbox mb-3"> 
-                            <input type="checkbox" name="rememberme" class="form-check-input" />
-                            <label class="dontre">Rmember me</label>
-                        </div>
-                        <div class="form-check f_swi">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label labe" for="flexRadioDefault1">
-                             I'm a chef
-                            </label>
-                          </div>
-                          <div class="form-check f_swi">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                            <label class="form-check-label labe" for="flexRadioDefault2">
-                              I'm a customer
-                            </label>
-                          </div>
-                        <div class="formbox formbuto"> 
-                            <input type="submit" name="Signin" value="Sign In" class="btn" />
-                        </div>
+                        <form action="" method="POST">
+                            <div class="form-group formbox mb-3"> 
+                                <label class="mb-3 formlabel">Email address</label>
+                                <input type="text" placeholder="Enter your email address" name="useremail" value="" class="form-control" />
+                            </div>
+                            <div class="form-group formbox mb-3"> 
+                                <label class="mb-3 formlabel">Password</label>
+                                <input type="password" placeholder="Enter your password" name="userpassword" value="" class="form-control" />
+                            </div>
+                            <div class="domatch">
+                                <label>Invalid credentials</label>
+                            </div>
+                            <div class="form-group formbox mb-3"> 
+                                <input type="checkbox" name="rememberme" class="form-check-input" />
+                                <label class="dontre">Rmember me</label>
+                            </div>
+                            <div class="form-check f_swi">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label labe" for="flexRadioDefault1">
+                                I'm a chef
+                                </label>
+                            </div>
+                            <div class="form-check f_swi">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                <label class="form-check-label labe" for="flexRadioDefault2">
+                                I'm a customer
+                                </label>
+                            </div>
+                            <div class="formbox formbuto"> 
+                                <input type="submit" name="Signin" value="Sign In" class="btn" />
+                            </div>
+                        </form>
                         <div class="signup formbox mb-3"> 
                             <p class="dont">Don't have an account??</p>
                             <a class="signupregi" href="Register.html">Sign Up</a>

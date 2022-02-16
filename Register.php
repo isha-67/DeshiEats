@@ -1,3 +1,70 @@
+<?php 
+  session_start();
+  
+  include("connect.php");
+
+  if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    
+    $fullname=$_POST['fname']."-".$_POST['lname'];
+    $Email=$_POST['email'];
+    $contact=(int)$_POST['contactNo'];
+    $passwrd=$_POST['pass'];
+    $confpasswrd=$_POST['cpass'];
+    
+    $chefDescription="About Chef";
+    $chefAddress="Chef/Company Address";
+    $chefArea="Chef/Company area";
+    $chefImage="Chef Image";
+    
+
+    $userType=$_POST['utype'];
+
+    if(!empty($fullname)  && !empty($contact) && !empty($Email) && !empty($passwrd) && !empty($confpasswrd)){
+
+      if($passwrd==$confpasswrd){
+        
+        if($userType=="customer"){
+          
+          /*
+          CustOrder ta ki hobe? 
+          $query="INSERT INTO customer(CustName, CustEmail, CustPassword, CustContactNumber, CustOrder, CustAddress, CustArea) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7])";
+
+            if(mysqli_query($CON,$query)){
+            echo "<script>window.location.href='Login.php';</script>";
+          }else{
+            echo "<script>window.location.href='Register.php?error-in-customer-insert';</script>";
+          }
+
+
+          */
+        
+        }elseif($userType=="chef"){
+          
+          $query="INSERT INTO chef(ChefName, ChefEmail, ChefPassword, ChefContactNumber, ChefDescription, ChefAddress, ChefArea, ChefImage) VALUES ('$fullname','$Email','$confpasswrd','$contact','$chefDescription','$chefAddress','$chefArea','$chefImage')";
+          
+          
+          if(mysqli_query($CON,$query)){
+            echo "<script>window.location.href='Login.php';</script>";
+          }else{
+            echo "<script>window.location.href='Register.php?error-in-chef-insert';</script>";
+          }
+
+
+        }
+        
+      }else{
+       echo "<script>window.location.href='Register.php?error-password-mismatch;</script>";
+      }
+
+    }else{
+      echo "<script>window.location.href='Register.php?error-in-emptycheck-$userType-$fullname-$contact-$Email-$passwrd-$confpasswrd';</script>";
+    }
+
+  }
+
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -94,28 +161,32 @@
               <h4 class="dont"> 
                    It's completely free.
                </h4>
-               <div class="mt-3 mb-3 Formnames">
-                  <input class="form-control fname" type="text" placeholder="First Name">
-                  <input class="form-control lname" type="text" placeholder="Last Name">
-               </div>
-               <input class="form-control mb-3" type="text" placeholder="Email">
-               <input class="form-control mb-3" type="text" placeholder="Contact No.">
-               <input class="form-control mb-3" type="password" placeholder="Password">
-               <input class="form-control" type="password" placeholder="Re-type password">
-               <div class="domatch">
-                <label class="">Passwords don't match</label>
-               </div>
-               <div class="form-check form-switch mt-3">
-                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                  <label class="form-check-label labe" for="flexSwitchCheckDefault">Register as a Chef</label>
-              </div>
-              <div class="form-check form-switch mt-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                <label class="form-check-label labe" for="flexSwitchCheckChecked">Register as a customer</label>
-              </div>
-              <div class="col-auto mt-4">
-                <button type="submit" class="btn btn-primary mb-3">Register</button>
-               </div>
+               
+               <form action="#" method="POST">
+                <div class="mt-3 mb-3 Formnames">
+                    <input class="form-control fname" type="text" placeholder="First Name"  name="fname" >
+                    <input class="form-control lname" type="text" placeholder="Last Name"   name="lname" >  
+                </div>
+                <input class="form-control mb-3" type="text" placeholder="Email"           name="email" >
+                <input class="form-control mb-3" type="text" placeholder="Contact No."     name="contactNo" >
+                <input class="form-control mb-3" type="password" placeholder="Password"    name="pass"  >
+                <input class="form-control" type="password" placeholder="Re-type password" name="cpass" >
+                <div class="domatch">
+                  <label class="">Passwords don't match</label>
+                </div>
+                <div class="form-check form-switch mt-3">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" value="chef" name="utype">
+                    <label class="form-check-label labe" for="flexSwitchCheckDefault">Register as a Chef</label>
+                </div>
+                <div class="form-check form-switch mt-3">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"  value="customer" name="utype">
+                  <label class="form-check-label labe" for="flexSwitchCheckChecked">Register as a customer</label>
+                </div>
+                <div class="col-auto mt-4">
+                  <button type="submit" class="btn btn-primary mb-3">Register</button>
+                </div>
+               </form>
+
               </div>
             </div>
           </div>
